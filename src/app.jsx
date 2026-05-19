@@ -88,47 +88,47 @@ function getDefaultTextAlign(layerKey, layerMeta = {}) {
   return "left";
 }
 
-function makeNobleCocoSeedSlides() {
+function makeTheme1Slides() {
   return [
     {
       id: crypto.randomUUID(),
       type: "cover",
-      name: "매장 소개",
+      name: "오늘 뭐 입지?",
       brand: "NOBLE COCO APGUJEONG",
-      title: "압구정에 이런 편집샵 있었어?",
-      subtitle: "스톤 아일랜드 보러 온다면",
-      englishTitle: "APGUJEONG",
-      scriptText: "Noble Coco",
+      title: "오늘 뭐 입지?",
+      subtitle: "여름 데일리 한 벌 추천",
+      englishTitle: "WHAT TO WEAR?",
+      scriptText: "Today,",
       url: "@NOBLECOCO",
-      overlay: 0.52,
+      overlay: 0.55,
       grain: true,
       bgImage: samplePhotos[1],
       bgPosition: "center 58%",
       insetImage: samplePhotos[0],
       layers: createLayers({
         coverBrand: { y: 8.2, size: 24 },
-        subtitle: { y: 38.8, size: 36 },
-        title: { y: 46.2, size: 56 },
-        englishTitle: { x: 7.4, y: 74.4, size: 62 },
-        script: { x: 58, y: 75.2, size: 110 },
+        subtitle: { y: 39, size: 36 },
+        title: { y: 47.5, size: 64 },
+        englishTitle: { x: 7.4, y: 74.4, size: 60 },
+        script: { x: 60, y: 76, size: 118 },
         url: { y: 95.3, size: 22 }
       })
     },
     {
       id: crypto.randomUUID(),
       type: "tip",
-      name: "스톤 아일랜드 입고",
-      tipLabel: "Stone",
+      name: "스톤 반팔 Pick",
+      tipLabel: "Pick",
       bullets: [
-        "압구정에서 스톤 아일랜드 찾는다면, 노블코코에서 먼저 확인해보세요.",
-        "아우터, 니트, 팬츠까지 실제로 보고 비교하기 좋게 정리해뒀습니다.",
-        "사진으로 애매했던 컬러감과 소재는 매장에서 보는 게 훨씬 정확해요."
+        "STONE ISLAND 컴파스 로고 반팔 티 — 여름엔 이거예요.",
+        "60/2 코튼 저지, 통풍 좋고 핏도 깔끔하게 떨어져요.",
+        "왼팔 시그니처 컴파스 — 어디서 봐도 한 눈에."
       ],
       url: "@NOBLECOCO",
-      overlay: 0.48,
+      overlay: 0.5,
       grain: true,
       bgImage: samplePhotos[3],
-      bgPosition: "center 50%",
+      bgPosition: "center 52%",
       insetImage: samplePhotos[0],
       layers: createLayers({
         tipLabel: { y: 11.2, size: 126 },
@@ -140,53 +140,163 @@ function makeNobleCocoSeedSlides() {
     {
       id: crypto.randomUUID(),
       type: "tip",
-      name: "매장 탐색",
-      tipLabel: "Shop",
+      name: "가격 비교",
+      tipLabel: "Save",
       bullets: [
-        "압구정 로데오 근처, 조용히 둘러보기 좋은 프리미엄 편집샵입니다.",
-        "의류, 슈즈, 가방까지 한 동선에서 자연스럽게 맞춰볼 수 있어요.",
-        "부담 없이 둘러보다가 마음에 드는 제품만 편하게 물어보시면 됩니다."
+        "공식 매장가 ₩000,000원 (참고가)",
+        "노블코코 압구정 ₩000,000원",
+        "차액으로 한 벌 더? 합리적으로 챙겨가세요."
       ],
       url: "@NOBLECOCO",
-      overlay: 0.5,
+      overlay: 0.58,
       grain: true,
-      bgImage: samplePhotos[2],
+      bgImage: samplePhotos[0],
       bgPosition: "center 50%",
       insetImage: samplePhotos[3],
       layers: createLayers({
         tipLabel: { y: 11.2, size: 126 },
         inset: { x: 50, y: 23.8, width: 64, height: 35 },
-        bullets: { x: 11.4, y: 63.2, size: 28 },
+        bullets: { x: 11.4, y: 63.4, size: 30 },
         url: { y: 95.2, size: 22 }
       })
     },
     {
       id: crypto.randomUUID(),
       type: "tip",
-      name: "방문 안내",
-      tipLabel: "Visit",
+      name: "방문 / Cool Summer",
+      tipLabel: "Cool Summer",
       bullets: [
-        "압구정 편집샵 찾고 있었다면 이 카드 저장해두세요.",
-        "스톤 아일랜드 입고 문의는 DM으로 편하게 보내주시면 됩니다.",
-        "댓글에 ‘위치’ 남겨주시면 방문 전 확인 포인트를 알려드릴게요."
+        "강남구 언주로168길 37 1층 · 압구정로데오역 도보 5분",
+        "매일 오전 10시 — 밤 9시",
+        "재고 문의 02-511-1725 · DM @noblecoco"
       ],
       url: "@NOBLECOCO",
-      overlay: 0.48,
+      overlay: 0.52,
       grain: true,
-      bgImage: samplePhotos[0],
-      bgPosition: "center 52%",
+      bgImage: samplePhotos[2],
+      bgPosition: "center 50%",
       insetImage: samplePhotos[1],
+      hiddenLayers: { inset: true },
       layers: createLayers({
-        tipLabel: { y: 11.2, size: 126 },
+        tipLabel: { y: 13, size: 96 },
         inset: { x: 50, y: 23.8, width: 64, height: 35 },
-        bullets: { x: 11.4, y: 63.4, size: 29 },
+        bullets: { x: 11.4, y: 56, size: 30 },
         url: { y: 95.2, size: 22 }
       })
     }
   ];
 }
 
-const seedSlides = makeNobleCocoSeedSlides();
+function makeTheme2Slides() {
+  // 캐러셀테마2 — IG @un_ni_item 첫 슬라이드 레이아웃을 100% 살린 풀블리드 + 하단 좌측정렬 오버레이.
+  // 슬라이드 1은 원본 이미지·카피를 그대로 사용, 슬라이드 2~4는 같은 위치/크기에 노블코코용 카피.
+  const hiddenForTheme2 = { coverBrand: true, englishTitle: true, script: true };
+  const sharedLayers = () =>
+    createLayers({
+      subtitle: { x: 6, y: 62, size: 36 },
+      title: { x: 6, y: 74, size: 88 },
+      url: { y: 95.4, size: 20 }
+    });
+
+  return [
+    {
+      id: crypto.randomUUID(),
+      type: "cover",
+      style: "bottom-left overlay-gradient",
+      name: "1. 후킹 — 매장 라인업",
+      brand: "NOBLE COCO APGUJEONG",
+      subtitle: "| 오늘 입고된 컬러",
+      title: "여름엔 이 컬러로\n시작해봐요",
+      englishTitle: "",
+      scriptText: "",
+      url: "@NOBLECOCO",
+      overlay: 0,
+      grain: false,
+      bgImage: "./src/assets/optimized/slide1-storefront-fast.jpg",
+      bgPosition: "center 50%",
+      insetImage: samplePhotos[0],
+      hiddenLayers: { ...hiddenForTheme2 },
+      layers: sharedLayers()
+    },
+    {
+      id: crypto.randomUUID(),
+      type: "cover",
+      style: "bottom-left centered-subtitle overlay-gradient",
+      name: "2. 컬러 라인업 (4-grid)",
+      brand: "NOBLE COCO APGUJEONG",
+      subtitle: "| 매장에 4가지 컬러 다 있어요",
+      title: "STONE ISLAND 반팔\n취향대로 골라봐요",
+      englishTitle: "",
+      scriptText: "",
+      url: "@NOBLECOCO",
+      overlay: 0,
+      grain: false,
+      bgImage: "./src/assets/optimized/tshirts-grid-fast.jpg",
+      bgPosition: "center 50%",
+      insetImage: samplePhotos[0],
+      hiddenLayers: { ...hiddenForTheme2 },
+      layers: createLayers({
+        subtitle: { x: 50, y: 62, size: 36 },
+        title: { x: 6, y: 74, size: 88 },
+        url: { y: 95.4, size: 20 }
+      })
+    },
+    {
+      id: crypto.randomUUID(),
+      type: "cover",
+      style: "bottom-left centered-subtitle price-pair overlay-top",
+      name: "3. 가격 (SALE 태그)",
+      brand: "NOBLE COCO APGUJEONG",
+      subtitle: "| ON SALE · 20% OFF",
+      title: "Official Retail   ₩298,750",
+      englishTitle: "Noble Coco Price   ₩239,000",
+      scriptText: "",
+      url: "@NOBLECOCO",
+      overlay: 0,
+      grain: false,
+      bgImage: "./src/assets/optimized/slide3-sale-tag-fast.jpg",
+      bgPosition: "center 50%",
+      insetImage: samplePhotos[3],
+      hiddenLayers: { coverBrand: true, script: true },
+      layers: createLayers({
+        subtitle: { x: 50, y: 16, size: 28 },
+        title: { x: 6, y: 32, size: 44 },
+        englishTitle: { x: 6, y: 40, size: 44 },
+        url: { y: 95.4, size: 20 }
+      })
+    },
+    {
+      id: crypto.randomUUID(),
+      type: "cover",
+      style: "bottom-left centered-subtitle",
+      name: "4. 방문 안내",
+      brand: "NOBLE COCO APGUJEONG",
+      subtitle: "| 압구정 로데오역 도보 5분",
+      title: "가볍게 들러봐요\n구경 환영이에요",
+      englishTitle: "",
+      scriptText: "",
+      url: "@NOBLECOCO",
+      overlay: 0.42,
+      grain: false,
+      bgImage: samplePhotos[2],
+      bgPosition: "center 50%",
+      insetImage: samplePhotos[1],
+      hiddenLayers: { ...hiddenForTheme2 },
+      layers: createLayers({
+        subtitle: { x: 50, y: 62, size: 36 },
+        title: { x: 6, y: 74, size: 88 },
+        url: { y: 95.4, size: 20 }
+      })
+    }
+  ];
+}
+
+const CAROUSEL_THEMES = [
+  { id: "theme1", label: "캐러셀테마1", subtitle: "오늘 뭐 입지? · Stone Island", make: makeTheme1Slides },
+  { id: "theme2", label: "캐러셀테마2", subtitle: "풀블리드 + 하단 오버레이 (IG @un_ni_item 시안 참고)", make: makeTheme2Slides }
+];
+
+const seedSlides = CAROUSEL_THEMES[0].make();
 
 const legacySeedSlides = [
   {
@@ -332,11 +442,99 @@ function useEditableTextSync(value) {
   return ref;
 }
 
+// 작업 내역 자동 저장 — 시드 데이터 스키마가 바뀌면 ":v2"로 올려 호환성 끊는다.
+const STORAGE_KEY = "noble-coco-carousel:v1";
+
+function loadPersistedState() {
+  if (typeof window === "undefined") return null;
+  try {
+    const raw = window.localStorage.getItem(STORAGE_KEY);
+    if (!raw) return null;
+    const data = JSON.parse(raw);
+    if (!data || !Array.isArray(data.slides) || data.slides.length === 0) return null;
+    return data;
+  } catch {
+    return null;
+  }
+}
+
+function persistState(state) {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify({
+        slides: state.slides,
+        activeId: state.activeId,
+        activeLayer: state.activeLayer,
+        activeThemeId: state.activeThemeId,
+        savedAt: new Date().toISOString()
+      })
+    );
+  } catch (err) {
+    // localStorage quota 초과(큰 base64 이미지 다수) 또는 사용 불가. 메모리 state는 계속 동작한다.
+    console.warn("작업 내역 자동 저장 실패:", err);
+  }
+}
+
+function clearPersistedState() {
+  if (typeof window === "undefined") return;
+  try {
+    window.localStorage.removeItem(STORAGE_KEY);
+  } catch {
+    /* noop */
+  }
+}
+
 function App() {
-  const [slides, setSlides] = useState(seedSlides);
-  const [activeId, setActiveId] = useState(seedSlides[0].id);
-  const [activeLayer, setActiveLayer] = useState("title");
+  // 마운트 시 1회만 localStorage에서 읽어오고, 이후엔 메모리 state만 사용.
+  const persistedRef = useRef(undefined);
+  if (persistedRef.current === undefined) {
+    persistedRef.current = loadPersistedState();
+  }
+  const persisted = persistedRef.current;
+
+  const initialSlides = persisted?.slides ?? seedSlides;
+  const initialActiveId =
+    persisted?.activeId && initialSlides.some((s) => s.id === persisted.activeId)
+      ? persisted.activeId
+      : initialSlides[0].id;
+  const initialActiveLayer = persisted?.activeLayer ?? "title";
+  const initialActiveThemeId = persisted?.activeThemeId ?? CAROUSEL_THEMES[0].id;
+
+  const [slides, setSlides] = useState(initialSlides);
+  const [activeId, setActiveId] = useState(initialActiveId);
+  const [activeLayer, setActiveLayer] = useState(initialActiveLayer);
   const [applyPhotoScaleToAll, setApplyPhotoScaleToAll] = useState(false);
+  const [isEditorHidden, setIsEditorHidden] = useState(false);
+  const [activeThemeId, setActiveThemeId] = useState(initialActiveThemeId);
+
+  useEffect(() => {
+    persistState({ slides, activeId, activeLayer, activeThemeId });
+  }, [slides, activeId, activeLayer, activeThemeId]);
+
+  const resetToSeed = () => {
+    if (typeof window !== "undefined" && !window.confirm("저장된 작업 내역을 지우고 현재 테마의 시드로 되돌릴까요?")) {
+      return;
+    }
+    clearPersistedState();
+    const theme = CAROUSEL_THEMES.find((entry) => entry.id === activeThemeId) || CAROUSEL_THEMES[0];
+    const nextSlides = theme.make();
+    setSlides(nextSlides);
+    setActiveId(nextSlides[0].id);
+    setActiveLayer(nextSlides[0].type === "cover" ? "title" : "tipLabel");
+    setActiveThemeId(theme.id);
+  };
+
+  const switchTheme = (themeId) => {
+    const theme = CAROUSEL_THEMES.find((entry) => entry.id === themeId);
+    if (!theme) return;
+    const nextSlides = theme.make();
+    setSlides(nextSlides);
+    setActiveId(nextSlides[0].id);
+    setActiveLayer(nextSlides[0].type === "cover" ? "title" : "tipLabel");
+    setActiveThemeId(themeId);
+  };
   const slideRefs = useRef({});
   const initialSlidesRef = useRef(null);
 
@@ -1168,7 +1366,7 @@ function App() {
   }, [activeLayer, activeSlide?.id, slides]);
 
   return (
-    <main className="studio-shell">
+    <main className={`studio-shell ${isEditorHidden ? "is-editor-hidden" : ""}`}>
       <section className="preview-pane">
         <div className="mb-5 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
           <div>
@@ -1181,6 +1379,27 @@ function App() {
             <p className="mt-2 text-sm text-[#6d6256]">
               매장 사진과 소개 문구를 카드별로 바로 다듬어보세요.
             </p>
+            <div className="theme-switcher">
+              {CAROUSEL_THEMES.map((theme) => (
+                <button
+                  key={theme.id}
+                  type="button"
+                  className={`theme-btn ${theme.id === activeThemeId ? "active" : ""}`}
+                  onClick={() => switchTheme(theme.id)}
+                  title={theme.subtitle}
+                >
+                  {theme.label}
+                </button>
+              ))}
+              <button
+                type="button"
+                className="theme-btn theme-btn-reset"
+                onClick={resetToSeed}
+                title="저장된 작업 내역을 지우고 현재 테마의 시드로 되돌립니다"
+              >
+                시드로 리셋
+              </button>
+            </div>
           </div>
           <div className="top-action-bar">
             <div className="quick-scale-panel" aria-label="선택 사진 크기 빠른 확대">
@@ -1223,6 +1442,13 @@ function App() {
             </div>
             <button className="btn" onClick={() => exportSlide(activeSlide)}>선택 PNG</button>
             <button className="btn btn-primary" onClick={exportZip}>전체 ZIP</button>
+            <button
+              className="btn"
+              onClick={() => setIsEditorHidden((prev) => !prev)}
+              type="button"
+            >
+              {isEditorHidden ? "편집 패널 보이기" : "편집 패널 숨기기"}
+            </button>
           </div>
         </div>
 
@@ -1352,32 +1578,33 @@ function App() {
               <>
                 <label className="field">
                   브랜드명 / 인스타 핸들
-                  <input value={activeSlide.brand} onChange={(event) => updateSlide({ brand: event.target.value })} />
+                  <textarea rows={1} value={activeSlide.brand} onChange={(event) => updateSlide({ brand: event.target.value })} />
                 </label>
                 <label className="field">
                   서브카피
-                  <input value={activeSlide.subtitle} onChange={(event) => updateSlide({ subtitle: event.target.value })} />
+                  <textarea rows={2} value={activeSlide.subtitle} onChange={(event) => updateSlide({ subtitle: event.target.value })} />
                 </label>
                 <label className="field">
                   한글 제목
-                  <input value={activeSlide.title} onChange={(event) => updateSlide({ title: event.target.value })} />
+                  <textarea rows={2} value={activeSlide.title} onChange={(event) => updateSlide({ title: event.target.value })} />
                 </label>
                 <label className="field">
                   큰 영어 타이틀
-                  <input value={activeSlide.englishTitle} onChange={(event) => updateSlide({ englishTitle: event.target.value })} />
+                  <textarea rows={2} value={activeSlide.englishTitle} onChange={(event) => updateSlide({ englishTitle: event.target.value })} />
                 </label>
                 <label className="field">
                   손글씨 포인트
-                  <input value={activeSlide.scriptText} onChange={(event) => updateSlide({ scriptText: event.target.value })} />
+                  <textarea rows={1} value={activeSlide.scriptText} onChange={(event) => updateSlide({ scriptText: event.target.value })} />
                 </label>
                 <label className="field">
                   URL
-                  <input value={activeSlide.url} onChange={(event) => updateSlide({ url: event.target.value })} />
+                  <textarea rows={1} value={activeSlide.url} onChange={(event) => updateSlide({ url: event.target.value })} />
                 </label>
                 {copiedTextLayers.map((copy) => (
                   <label className="field copied-field" key={copy.id}>
                     복제 문구 · {copy.label}
-                    <input
+                    <textarea
+                      rows={2}
                       value={copy.value}
                       onChange={(event) => updateSlideText(activeSlide.id, copyLayerKey(copy.id), { value: event.target.value })}
                       onFocus={() => setActiveLayer(copyLayerKey(copy.id))}
@@ -1584,8 +1811,11 @@ const CarouselSlide = React.memo(function CarouselSlide({
     isLayerLocked
   };
 
+  const styleClass = slide.style
+    ? slide.style.split(/\s+/).filter(Boolean).map((s) => `is-style-${s}`).join(" ")
+    : "";
   return (
-    <div className="slide-canvas" ref={refCallback} style={vars}>
+    <div className={`slide-canvas ${styleClass}`.trim()} ref={refCallback} style={vars}>
       {slide.bgImage ? (
         <img
           className="slide-bg"
@@ -2112,9 +2342,17 @@ function LayerToolbar({
 }
 
 function finishSingleLineEdit(event) {
-  if (event.key !== "Enter" || event.shiftKey) return;
+  // Escape → 편집 종료. Enter → 줄바꿈 삽입(인-플레이스 contentEditable에 멀티라인 허용).
+  if (event.key === "Escape") {
+    event.preventDefault();
+    event.currentTarget.blur();
+    return;
+  }
+  if (event.key !== "Enter") return;
+  // insertLineBreak는 <br>을 넣어 textContent가 \n으로 안 잡힘 — \n 텍스트를 직접 삽입해야
+  // onInput에서 event.currentTarget.textContent로 줄바꿈을 그대로 보존할 수 있다.
   event.preventDefault();
-  event.currentTarget.blur();
+  document.execCommand("insertText", false, "\n");
 }
 
 function pastePlainText(event) {

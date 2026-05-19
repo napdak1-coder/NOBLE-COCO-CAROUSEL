@@ -48,6 +48,14 @@ select {
   padding: 18px;
 }
 
+.studio-shell.is-editor-hidden {
+  grid-template-columns: minmax(0, 1fr);
+}
+
+.studio-shell.is-editor-hidden > .editor-panel {
+  display: none;
+}
+
 .preview-pane {
   min-width: 0;
 }
@@ -58,6 +66,50 @@ select {
   align-items: center;
   justify-content: flex-end;
   gap: 8px;
+}
+
+.theme-switcher {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.theme-btn {
+  border: 1px solid rgba(168, 111, 69, 0.32);
+  border-radius: 999px;
+  padding: 8px 18px;
+  background: rgba(255, 255, 255, 0.78);
+  color: #2d261f;
+  font-size: 13px;
+  font-weight: 800;
+  cursor: pointer;
+  transition: border-color 0.14s ease, background-color 0.14s ease, color 0.14s ease, transform 0.14s ease;
+}
+
+.theme-btn:hover:not(.active) {
+  border-color: rgba(168, 111, 69, 0.6);
+  background: rgba(255, 248, 239, 0.95);
+  transform: translateY(-1px);
+}
+
+.theme-btn.active {
+  color: #201913;
+  border-color: #ffd9bd;
+  background: #ffd9bd;
+  font-weight: 900;
+}
+
+.theme-btn-reset {
+  margin-left: auto;
+  color: #8b5a3c;
+  border-color: rgba(139, 90, 60, 0.32);
+  background: transparent;
+  font-weight: 600;
+}
+.theme-btn-reset:hover {
+  border-color: rgba(139, 90, 60, 0.7);
+  background: rgba(255, 248, 239, 0.95);
 }
 
 .quick-scale-panel {
@@ -520,15 +572,13 @@ select {
 
 .preview-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 24px;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
   align-items: start;
 }
 
 .slide-shell {
   min-width: 0;
-  content-visibility: auto;
-  contain-intrinsic-size: 390px 520px;
 }
 
 .slide-caption {
@@ -542,10 +592,12 @@ select {
 }
 
 .slide-preview-frame {
-  --preview-scale: 0.34;
-  width: calc(var(--canvas-width) * var(--preview-scale));
-  height: calc(var(--canvas-height) * var(--preview-scale));
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1080 / 1350;
   margin: 0 auto;
+  overflow: hidden;
   contain: layout paint;
 }
 
@@ -568,7 +620,10 @@ select {
 }
 
 .slide-preview-frame > .slide-canvas {
-  transform: scale(var(--preview-scale));
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scale(calc(100cqi / 1080px));
   transform-origin: top left;
 }
 
@@ -947,6 +1002,111 @@ body.is-layer-resizing {
   text-align: center;
 }
 
+/* Bottom-left layout style — used by 캐러셀테마2 to mimic IG @un_ni_item style.
+   Overrides .centered to anchor left edge instead of center, left-align text. */
+.is-style-bottom-left .centered {
+  transform: translateY(-50%);
+  text-align: left;
+}
+
+.is-style-bottom-left .korean-subtitle,
+.is-style-bottom-left .korean-title {
+  width: 88%;
+}
+
+.is-style-bottom-left .korean-subtitle {
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  opacity: 0.95;
+}
+
+/* Keep @noblecoco URL truly centered (override the left-anchor rule above). */
+.is-style-bottom-left .url-text.centered {
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+/* Centered subtitle accent — used on Theme 2 slides 2/3/4 only.
+   Keeps the small "|" accent line horizontally centered while the headline
+   stays left-anchored (bottom-left layout). */
+.is-style-centered-subtitle .korean-subtitle.centered {
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 80%;
+}
+
+/* Normalize english-title when used as a stacked price/info row alongside the
+   main title in bottom-left layouts. Removes uppercase and uses comfortable
+   line-height so Korean+digits sit consistently with the title row. */
+.is-style-bottom-left .english-title {
+  line-height: 1.12;
+  text-transform: none;
+  letter-spacing: 0.015em;
+}
+
+/* Price-pair — used on Theme 2 슬라이드 3. 두 가격 라인은 모두 흰색을 유지하되
+   웨이트로만 강약을 만든다: 서브카피(SALE 안내)는 얇게, 공식매장가(참고가)는 보통,
+   노블코코 매장가(실판가)는 굵게 + 살짝 더 큰 사이즈로. */
+.is-style-price-pair .korean-subtitle {
+  font-weight: 300;
+  letter-spacing: 0.02em;
+  opacity: 0.88;
+}
+.is-style-price-pair .korean-title,
+.is-style-price-pair .english-title {
+  width: auto;
+  line-height: 1.12;
+  letter-spacing: 0.015em;
+  font-family: var(--font-body);
+  text-transform: none;
+  text-align: left;
+}
+.is-style-price-pair .korean-title {
+  font-weight: 500;
+  opacity: 0.92;
+}
+.is-style-price-pair .english-title {
+  font-weight: 900;
+}
+
+/* Gradient overlay — used on product slides where a flat dark wash would dull
+   the photo. Keeps the upper image clean and provides a soft dark band only at
+   the very bottom for URL/caption legibility. */
+.is-style-overlay-gradient .dark-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0) 0%,
+    rgba(0, 0, 0, 0) 50%,
+    rgba(0, 0, 0, 0.35) 68%,
+    rgba(0, 0, 0, 0.6) 85%,
+    rgba(0, 0, 0, 0.78) 100%
+  );
+}
+
+.is-style-overlay-gradient .warm-wash {
+  display: none;
+}
+
+/* Top-heavy overlay — used when the focal subject of the photo sits in the lower
+   half (e.g., slide 3's SALE tag at bottom-left). Darkens the top for text and
+   leaves the lower portion visible, with a tiny dark band at the very bottom
+   so the @noblecoco URL stays readable. */
+.is-style-overlay-top .dark-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.58) 0%,
+    rgba(0, 0, 0, 0.48) 30%,
+    rgba(0, 0, 0, 0.18) 50%,
+    rgba(0, 0, 0, 0) 60%,
+    rgba(0, 0, 0, 0) 92%,
+    rgba(0, 0, 0, 0.52) 100%
+  );
+}
+
+.is-style-overlay-top .warm-wash {
+  display: none;
+}
+
 .cover-brand {
   width: 70%;
   font-family: var(--font-title);
@@ -965,10 +1125,10 @@ body.is-layer-resizing {
 
 .korean-title {
   width: 82%;
-  font-family: var(--font-body);
-  font-weight: 300;
-  letter-spacing: 0.08em;
-  line-height: 1.22;
+  font-family: var(--font-title);
+  font-weight: 900;
+  letter-spacing: 0.015em;
+  line-height: 1.08;
 }
 
 .english-title {
@@ -1207,11 +1367,7 @@ body.is-layer-resizing {
   }
 
   .preview-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .slide-preview-frame {
-    --preview-scale: 0.29;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .editor-panel {

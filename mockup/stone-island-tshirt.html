@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>기획안 · 스톤 아일랜드 반팔 캐러셀</title>
+    <link rel="stylesheet" href="../src/styles.css" />
+    <style>
+      body {
+        padding: 32px 48px 80px;
+        max-width: 1480px;
+        margin: 0 auto;
+      }
+
+      .mockup-header {
+        margin-bottom: 28px;
+      }
+
+      .mockup-eyebrow {
+        margin: 0 0 8px;
+        color: #a86f45;
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.24em;
+        text-transform: uppercase;
+      }
+
+      .mockup-title {
+        margin: 0 0 8px;
+        color: #241e18;
+        font-size: 30px;
+        font-weight: 900;
+        letter-spacing: -0.01em;
+      }
+
+      .mockup-desc {
+        margin: 0;
+        color: #6d6256;
+        font-size: 14px;
+      }
+
+      .mockup-preview {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 12px;
+        margin: 24px 0 40px;
+      }
+
+      .mockup-frame {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 1080 / 1350;
+        overflow: hidden;
+        border-radius: 8px;
+        container-type: inline-size;
+        box-shadow: 0 18px 40px rgba(70, 50, 30, 0.18);
+      }
+
+      .mockup-frame > .slide-canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: scale(calc(100cqi / 1080px));
+        transform-origin: top left;
+        box-shadow: none;
+      }
+
+      .slide-caption-tag {
+        display: block;
+        margin-top: 10px;
+        color: #6d6256;
+        font-size: 12px;
+        font-weight: 800;
+        text-align: center;
+        letter-spacing: 0.04em;
+      }
+
+      .mockup-section {
+        margin: 32px 0;
+        border: 1px solid rgba(50, 42, 32, 0.1);
+        border-radius: 16px;
+        padding: 22px 26px;
+        background: rgba(255, 252, 246, 0.85);
+      }
+
+      .mockup-section h2 {
+        margin: 0 0 14px;
+        color: #241e18;
+        font-size: 18px;
+        font-weight: 900;
+      }
+
+      .caption-block {
+        white-space: pre-wrap;
+        background: rgba(255, 217, 189, 0.18);
+        border: 1px solid rgba(168, 111, 69, 0.18);
+        border-radius: 12px;
+        padding: 18px 20px;
+        color: #2d261f;
+        font-size: 14.5px;
+        line-height: 1.65;
+      }
+
+      .notes-list {
+        margin: 0;
+        padding-left: 18px;
+        color: #2d261f;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .notes-list li + li {
+        margin-top: 4px;
+      }
+
+      .notes-list strong {
+        color: #6b3f21;
+      }
+
+      .price-pill {
+        display: inline-block;
+        margin: 6px 4px 0 0;
+        border: 1px solid rgba(168, 111, 69, 0.3);
+        border-radius: 999px;
+        padding: 4px 10px;
+        background: rgba(255, 255, 255, 0.6);
+        color: #2d261f;
+        font-size: 12px;
+        font-weight: 800;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="mockup-header">
+      <p class="mockup-eyebrow">NOBLE COCO · CAROUSEL PLAN</p>
+      <h1 class="mockup-title">스톤 아일랜드 반팔 티 — “오늘 뭐 입지?” 캐러셀 기획안</h1>
+      <p class="mockup-desc">
+        4컷 구성, 단일 제품 + 가격 메리트 후킹. 시스템 반영은 보류, 시안 검토용입니다.
+      </p>
+    </header>
+
+    <!-- 4 슬라이드 프리뷰 -->
+    <section class="mockup-preview">
+      <!-- ─────────────── Slide 1: Hook ─────────────── -->
+      <div>
+        <div class="mockup-frame">
+          <div
+            class="slide-canvas"
+            style="--overlay-opacity: 0.55; --text-color: #f8f5ef; --accent-color: #ffd9bd; --bg-position: center 58%;"
+          >
+            <img
+              class="slide-bg"
+              src="../src/assets/optimized/noblecoco-store-02-fast.jpg"
+              alt=""
+            />
+            <div class="dark-overlay"></div>
+            <div class="warm-wash"></div>
+            <div class="film-grain"></div>
+            <div
+              class="layer cover-brand centered"
+              style="left: 50%; top: 8.2%; color: #f8f5ef; font-size: 24px;"
+            >
+              @NOBLECOCO
+            </div>
+            <div
+              class="layer korean-subtitle centered"
+              style="left: 50%; top: 39%; color: #f8f5ef; font-size: 36px;"
+            >
+              여름 데일리 한 벌 추천
+            </div>
+            <div
+              class="layer korean-title centered"
+              style="left: 50%; top: 47.5%; color: #f8f5ef; font-size: 64px;"
+            >
+              오늘 뭐 입지?
+            </div>
+            <div
+              class="layer english-title"
+              style="left: 7.4%; top: 73.4%; color: #ffffff; font-size: 78px;"
+            >
+              WHAT TO<br />WEAR?
+            </div>
+            <div
+              class="layer script-text"
+              style="left: 58%; top: 76%; color: #ffd9bd; font-size: 130px;"
+            >
+              Today,
+            </div>
+            <div
+              class="layer url-text centered"
+              style="left: 50%; top: 95.3%; color: #f8f5ef; font-size: 22px;"
+            >
+              @NOBLECOCO
+            </div>
+          </div>
+        </div>
+        <span class="slide-caption-tag">1 · HOOK</span>
+      </div>
+
+      <!-- ─────────────── Slide 2: Product reveal ─────────────── -->
+      <div>
+        <div class="mockup-frame">
+          <div
+            class="slide-canvas"
+            style="--overlay-opacity: 0.5; --text-color: #f8f5ef; --accent-color: #ffd9bd; --bg-position: center 52%;"
+          >
+            <img
+              class="slide-bg"
+              src="../src/assets/optimized/noblecoco-store-04-fast.jpg"
+              alt=""
+            />
+            <div class="dark-overlay"></div>
+            <div class="warm-wash"></div>
+            <div class="film-grain"></div>
+            <div
+              class="layer script-text centered"
+              style="left: 50%; top: 11.4%; color: #ffd9bd; font-size: 126px;"
+            >
+              Pick
+            </div>
+            <div
+              class="layer korean-subtitle centered"
+              style="left: 50%; top: 28%; color: #f8f5ef; font-size: 30px;"
+            >
+              STONE ISLAND
+            </div>
+            <div
+              class="layer korean-title centered"
+              style="left: 50%; top: 33.5%; color: #f8f5ef; font-size: 50px;"
+            >
+              컴파스 로고 반팔 티
+            </div>
+            <div
+              class="layer editable-group"
+              style="left: 11.4%; top: 60%; width: 76%; color: #f8f5ef; font-size: 29px; text-align: left;"
+            >
+              <ul class="bullet-list">
+                <li>여름에 한 장만 산다면, 그래도 이거.</li>
+                <li>60/2 코튼 저지 — 통풍 좋고, 핏도 깔끔하게.</li>
+                <li>어디서 봐도 한 눈에 알아보는 그 시그니처.</li>
+              </ul>
+            </div>
+            <div
+              class="layer url-text centered"
+              style="left: 50%; top: 95.2%; color: #f8f5ef; font-size: 22px;"
+            >
+              @NOBLECOCO
+            </div>
+          </div>
+        </div>
+        <span class="slide-caption-tag">2 · PRODUCT</span>
+      </div>
+
+      <!-- ─────────────── Slide 3: Price ─────────────── -->
+      <div>
+        <div class="mockup-frame">
+          <div
+            class="slide-canvas"
+            style="--overlay-opacity: 0.58; --text-color: #f8f5ef; --accent-color: #ffd9bd; --bg-position: center 50%;"
+          >
+            <img
+              class="slide-bg"
+              src="../src/assets/optimized/noblecoco-store-01-fast.jpg"
+              alt=""
+            />
+            <div class="dark-overlay"></div>
+            <div class="warm-wash"></div>
+            <div class="film-grain"></div>
+            <div
+              class="layer script-text centered"
+              style="left: 50%; top: 11.4%; color: #ffd9bd; font-size: 126px;"
+            >
+              Save
+            </div>
+            <div
+              class="layer korean-title centered"
+              style="left: 50%; top: 30%; color: #f8f5ef; font-size: 50px;"
+            >
+              가격 비교해보면
+            </div>
+            <div
+              class="layer editable-group"
+              style="left: 11.4%; top: 50%; width: 76%; color: #f8f5ef; font-size: 30px; text-align: left;"
+            >
+              <ul class="bullet-list">
+                <li>공식 매장가 <strong style="color:#ffd9bd">₩000,000</strong> 원 (참고가)</li>
+                <li>노블코코 압구정 <strong style="color:#ffd9bd">₩000,000</strong> 원</li>
+                <li>차액으로 한 벌 더? 합리적으로 챙겨가세요.</li>
+              </ul>
+            </div>
+            <div
+              class="layer url-text centered"
+              style="left: 50%; top: 95.2%; color: #f8f5ef; font-size: 22px;"
+            >
+              @NOBLECOCO
+            </div>
+          </div>
+        </div>
+        <span class="slide-caption-tag">3 · PRICE</span>
+      </div>
+
+      <!-- ─────────────── Slide 4: Visit / Close ─────────────── -->
+      <div>
+        <div class="mockup-frame">
+          <div
+            class="slide-canvas"
+            style="--overlay-opacity: 0.5; --text-color: #f8f5ef; --accent-color: #ffd9bd; --bg-position: center 50%;"
+          >
+            <img
+              class="slide-bg"
+              src="../src/assets/optimized/noblecoco-store-03-fast.jpg"
+              alt=""
+            />
+            <div class="dark-overlay"></div>
+            <div class="warm-wash"></div>
+            <div class="film-grain"></div>
+            <div
+              class="layer script-text centered"
+              style="left: 50%; top: 11.4%; color: #ffd9bd; font-size: 116px;"
+            >
+              Cool Summer
+            </div>
+            <div
+              class="layer korean-title centered"
+              style="left: 50%; top: 28%; color: #f8f5ef; font-size: 48px;"
+            >
+              올여름, 시원하게
+            </div>
+            <div
+              class="layer editable-group"
+              style="left: 11.4%; top: 56%; width: 76%; color: #f8f5ef; font-size: 28px; text-align: left;"
+            >
+              <ul class="bullet-list">
+                <li>강남구 언주로168길 37 1층 · 압구정로데오역 도보 5분</li>
+                <li>매일 오전 10시 — 밤 9시</li>
+                <li>재고 문의 02-511-1725 · DM @noblecoco</li>
+              </ul>
+            </div>
+            <div
+              class="layer url-text centered"
+              style="left: 50%; top: 95.2%; color: #f8f5ef; font-size: 22px;"
+            >
+              @NOBLECOCO
+            </div>
+          </div>
+        </div>
+        <span class="slide-caption-tag">4 · VISIT</span>
+      </div>
+    </section>
+
+    <!-- 캡션 시안 -->
+    <section class="mockup-section">
+      <h2>피드 캡션 시안</h2>
+      <div class="caption-block">오늘 뭐 입지? 🤔
+
+여름엔 그래도 스톤 아일랜드 반팔이 정답이에요.
+컴파스 로고 한 장이면 어떤 룩에 매치해도 깔끔하게 떨어지거든요.
+
+🏷 공식가 대비 노블코코 압구정 매장에서 더 합리적으로
+올여름, 시원하면서도 잘 입은 룩으로 가볍게 챙겨가세요 🌿
+
+📍 강남구 언주로168길 37 1층 (압구정로데오역 도보 5분)
+🕙 매일 오전 10시 — 밤 9시
+📞 02-511-1725 / DM @noblecoco</div>
+    </section>
+
+    <!-- 구성 의도 -->
+    <section class="mockup-section">
+      <h2>구성 의도 & 비고</h2>
+      <ul class="notes-list">
+        <li><strong>1컷 (Hook)</strong> — “오늘 뭐 입지?” 의문문으로 시작, 가벼운 질문 던지기로 swipe 유도.</li>
+        <li><strong>2컷 (Product)</strong> — Stone Island 컴파스 로고 반팔 티로 답을 줌. 소재·핏·시그니처 3포인트.</li>
+        <li><strong>3컷 (Price)</strong> — 공식가 vs 노블코코가 비교. 숫자는 <span class="price-pill">₩000,000</span> 자리에 실가 입력해주세요.</li>
+        <li><strong>4컷 (Visit)</strong> — “올여름 시원하게” 톤으로 마무리 + 매장 정보 / DM 콜아웃.</li>
+        <li>배경 사진은 현재 매장 컷 그대로 사용 — <strong>실제 발행 시 제품 디테일 컷·착장 컷으로 교체</strong> 권장 (특히 2컷·3컷).</li>
+        <li>슬라이드 3 가격은 가격표시법(부가세 포함 단일 표기) 준수, “정상가” 표현은 광고법 이슈 있으니 <strong>“공식 매장가(참고가)”</strong>로 명시했어요.</li>
+        <li>해시태그 분리 운영: 본문은 캡션만, 첫 댓글에 #노블코코 #스톤아일랜드 #압구정편집샵 등 별도 첨부 권장.</li>
+      </ul>
+    </section>
+  </body>
+</html>
