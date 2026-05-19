@@ -188,103 +188,100 @@ function makeTheme1Slides() {
 }
 
 function makeTheme2Slides() {
-  // 캐러셀테마2 — IG @un_ni_item 첫 슬라이드 레이아웃을 100% 살린 풀블리드 + 하단 좌측정렬 오버레이.
-  // 슬라이드 1은 원본 이미지·카피를 그대로 사용, 슬라이드 2~4는 같은 위치/크기에 노블코코용 카피.
+  // 캐러셀테마2 — 풀블리드 배경 + 하단 좌측정렬 후킹 카피.
+  // 4장의 후킹 카피는 첫 줄(subtitle)을 작게, 두 번째 줄(title)을 크게 두어 위계를 만든다.
   const hiddenForTheme2 = { coverBrand: true, englishTitle: true, script: true };
-  const sharedLayers = () =>
-    createLayers({
-      subtitle: { x: 6, y: 62, size: 36 },
-      title: { x: 6, y: 74, size: 88 },
-      url: { y: 95.4, size: 20 }
-    });
 
   return [
     {
       id: crypto.randomUUID(),
       type: "cover",
       style: "bottom-left overlay-gradient",
-      name: "1. 후킹 — 매장 라인업",
+      name: "1. 후킹 — 색감",
       brand: "NOBLE COCO APGUJEONG",
-      subtitle: "| 오늘 입고된 컬러",
-      title: "여름엔 이 컬러로\n시작해봐요",
+      subtitle: "스톤아일랜드 바람막이,",
+      title: "이 색감이면\n그냥 지나치기 어렵지",
       englishTitle: "",
       scriptText: "",
       url: "@NOBLECOCO",
-      overlay: 0,
+      overlay: 0.18,
       grain: false,
-      bgImage: "./src/assets/optimized/slide1-storefront-fast.jpg",
-      bgPosition: "center 50%",
-      insetImage: samplePhotos[0],
-      hiddenLayers: { ...hiddenForTheme2 },
-      layers: sharedLayers()
-    },
-    {
-      id: crypto.randomUUID(),
-      type: "cover",
-      style: "bottom-left centered-subtitle overlay-gradient",
-      name: "2. 컬러 라인업 (4-grid)",
-      brand: "NOBLE COCO APGUJEONG",
-      subtitle: "| 매장에 4가지 컬러 다 있어요",
-      title: "STONE ISLAND 반팔\n취향대로 골라봐요",
-      englishTitle: "",
-      scriptText: "",
-      url: "@NOBLECOCO",
-      overlay: 0,
-      grain: false,
-      bgImage: "./src/assets/optimized/tshirts-grid-fast.jpg",
+      bgImage: "./src/assets/optimized/theme2-slide1.png",
       bgPosition: "center 50%",
       insetImage: samplePhotos[0],
       hiddenLayers: { ...hiddenForTheme2 },
       layers: createLayers({
-        subtitle: { x: 50, y: 62, size: 36 },
-        title: { x: 6, y: 74, size: 88 },
+        subtitle: { x: 6, y: 72, size: 32 },
+        title: { x: 6, y: 80, size: 60 },
         url: { y: 95.4, size: 20 }
       })
     },
     {
       id: crypto.randomUUID(),
       type: "cover",
-      style: "bottom-left centered-subtitle price-pair overlay-top",
-      name: "3. 가격 (SALE 태그)",
+      style: "bottom-left overlay-gradient",
+      name: "2. 활용도",
       brand: "NOBLE COCO APGUJEONG",
-      subtitle: "| ON SALE · 20% OFF",
-      title: "Official Retail   ₩298,750",
-      englishTitle: "Noble Coco Price   ₩239,000",
+      subtitle: "간절기부터 여름 밤까지,",
+      title: "데일리 아우터로\n활용도 높게",
+      englishTitle: "",
       scriptText: "",
       url: "@NOBLECOCO",
-      overlay: 0,
+      overlay: 0.2,
       grain: false,
-      bgImage: "./src/assets/optimized/slide3-sale-tag-fast.jpg",
+      bgImage: "./src/assets/optimized/theme2-slide2.png",
+      bgPosition: "center 50%",
+      insetImage: samplePhotos[0],
+      hiddenLayers: { ...hiddenForTheme2 },
+      layers: createLayers({
+        subtitle: { x: 6, y: 72, size: 32 },
+        title: { x: 6, y: 80, size: 64 },
+        url: { y: 95.4, size: 20 }
+      })
+    },
+    {
+      id: crypto.randomUUID(),
+      type: "cover",
+      style: "bottom-left overlay-gradient",
+      name: "3. 다음 카드 유도",
+      brand: "NOBLE COCO APGUJEONG",
+      subtitle: "이렇게 예쁜 색감, 어디서 구하냐고요?",
+      title: "정답은\n마지막 사진에 있어요",
+      englishTitle: "",
+      scriptText: "",
+      url: "@NOBLECOCO",
+      overlay: 0.25,
+      grain: false,
+      bgImage: "./src/assets/optimized/theme2-slide3.png",
       bgPosition: "center 50%",
       insetImage: samplePhotos[3],
-      hiddenLayers: { coverBrand: true, script: true },
+      hiddenLayers: { ...hiddenForTheme2 },
       layers: createLayers({
-        subtitle: { x: 50, y: 16, size: 28 },
-        title: { x: 6, y: 32, size: 44 },
-        englishTitle: { x: 6, y: 40, size: 44 },
+        subtitle: { x: 6, y: 72, size: 28 },
+        title: { x: 6, y: 80, size: 60 },
         url: { y: 95.4, size: 20 }
       })
     },
     {
       id: crypto.randomUUID(),
       type: "cover",
-      style: "bottom-left centered-subtitle",
-      name: "4. 방문 안내",
+      style: "bottom-left overlay-gradient",
+      name: "4. 매장 안내",
       brand: "NOBLE COCO APGUJEONG",
-      subtitle: "| 압구정 로데오역 도보 5분",
-      title: "가볍게 들러봐요\n구경 환영이에요",
+      subtitle: "서울 강남구 언주로168길 37, 1F",
+      title: "NOBLECOCO",
       englishTitle: "",
       scriptText: "",
       url: "@NOBLECOCO",
       overlay: 0.42,
       grain: false,
-      bgImage: samplePhotos[2],
+      bgImage: "./src/assets/optimized/theme2-slide4.png",
       bgPosition: "center 50%",
       insetImage: samplePhotos[1],
       hiddenLayers: { ...hiddenForTheme2 },
       layers: createLayers({
-        subtitle: { x: 50, y: 62, size: 36 },
-        title: { x: 6, y: 74, size: 88 },
+        subtitle: { x: 6, y: 76, size: 30 },
+        title: { x: 6, y: 84, size: 88 },
         url: { y: 95.4, size: 20 }
       })
     }
@@ -442,8 +439,8 @@ function useEditableTextSync(value) {
   return ref;
 }
 
-// 작업 내역 자동 저장 — 시드 데이터 스키마가 바뀌면 ":v2"로 올려 호환성 끊는다.
-const STORAGE_KEY = "noble-coco-carousel:v1";
+// 작업 내역 자동 저장 — 시드 데이터 스키마/카피가 바뀌면 버전을 올려 이전 저장본을 무시한다.
+const STORAGE_KEY = "noble-coco-carousel:v2";
 
 function loadPersistedState() {
   if (typeof window === "undefined") return null;
