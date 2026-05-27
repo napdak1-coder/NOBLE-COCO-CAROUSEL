@@ -16,6 +16,13 @@ const samplePhotos = [
   "./src/assets/optimized/noblecoco-store-03-fast.jpg",
   "./src/assets/optimized/noblecoco-store-04-fast.jpg"
 ];
+const theme2Photos = [
+  "./사진/1.png?v=theme2-cream-20260520",
+  "./사진/2.png?v=theme2-cream-20260520",
+  "./사진/3.png?v=theme2-cream-20260520",
+  "./사진/4.png?v=theme2-cream-20260520",
+  "./사진/5.png?v=theme2-cream-20260520"
+];
 
 const defaultLayer = {
   coverBrand: { x: 50, y: 8.4, size: 23, color: "#f8f5ef" },
@@ -197,22 +204,22 @@ function makeTheme2Slides() {
       id: crypto.randomUUID(),
       type: "cover",
       style: "bottom-left overlay-gradient",
-      name: "1. 후킹 — 색감",
+      name: "1. 후킹 — 맨투맨",
       brand: "NOBLE COCO APGUJEONG",
-      subtitle: "스톤아일랜드 바람막이,",
-      title: "이 색감이면\n그냥 지나치기 어렵지",
+      subtitle: "스톤아일랜드 맨투맨,",
+      title: "이거 어때?",
       englishTitle: "",
       scriptText: "",
       url: "@NOBLECOCO",
       overlay: 0.18,
       grain: false,
-      bgImage: "./src/assets/optimized/theme2-slide1.png",
+      bgImage: theme2Photos[0],
       bgPosition: "center 50%",
       insetImage: samplePhotos[0],
       hiddenLayers: { ...hiddenForTheme2 },
       layers: createLayers({
-        subtitle: { x: 6, y: 72, size: 32 },
-        title: { x: 6, y: 80, size: 60 },
+        subtitle: { x: 6, y: 7, size: 32 },
+        title: { x: 6, y: 80, size: 64 },
         url: { y: 95.4, size: 20 }
       })
     },
@@ -229,7 +236,7 @@ function makeTheme2Slides() {
       url: "@NOBLECOCO",
       overlay: 0.2,
       grain: false,
-      bgImage: "./src/assets/optimized/theme2-slide2.png",
+      bgImage: theme2Photos[1],
       bgPosition: "center 50%",
       insetImage: samplePhotos[0],
       hiddenLayers: { ...hiddenForTheme2 },
@@ -243,7 +250,7 @@ function makeTheme2Slides() {
       id: crypto.randomUUID(),
       type: "cover",
       style: "bottom-left overlay-gradient",
-      name: "3. 다음 카드 유도",
+      name: "3. 제품 정보",
       brand: "NOBLE COCO APGUJEONG",
       subtitle: "이렇게 예쁜 색감, 어디서 구하냐고요?",
       title: "정답은\n마지막 사진에 있어요",
@@ -252,10 +259,10 @@ function makeTheme2Slides() {
       url: "@NOBLECOCO",
       overlay: 0.25,
       grain: false,
-      bgImage: "./src/assets/optimized/theme2-slide3.png",
+      bgImage: theme2Photos[2],
       bgPosition: "center 50%",
       insetImage: samplePhotos[3],
-      hiddenLayers: { ...hiddenForTheme2 },
+      hiddenLayers: { ...hiddenForTheme2, subtitle: true, title: true, url: true },
       layers: createLayers({
         subtitle: { x: 6, y: 72, size: 28 },
         title: { x: 6, y: 80, size: 60 },
@@ -266,22 +273,45 @@ function makeTheme2Slides() {
       id: crypto.randomUUID(),
       type: "cover",
       style: "bottom-left overlay-gradient",
-      name: "4. 매장 안내",
+      name: "4. 착용 후킹",
       brand: "NOBLE COCO APGUJEONG",
-      subtitle: "서울 강남구 언주로168길 37, 1F",
-      title: "NOBLECOCO",
+      subtitle: "입기만 하면 더 이뻐 보여서 문제",
+      title: "너두!",
       englishTitle: "",
       scriptText: "",
       url: "@NOBLECOCO",
-      overlay: 0.42,
+      overlay: 0.2,
       grain: false,
-      bgImage: "./src/assets/optimized/theme2-slide4.png",
+      bgImage: theme2Photos[3],
       bgPosition: "center 50%",
       insetImage: samplePhotos[1],
       hiddenLayers: { ...hiddenForTheme2 },
       layers: createLayers({
-        subtitle: { x: 6, y: 76, size: 30 },
-        title: { x: 6, y: 84, size: 88 },
+        subtitle: { x: 6, y: 72, size: 30 },
+        title: { x: 6, y: 80, size: 88 },
+        url: { y: 95.4, size: 20 }
+      })
+    },
+    {
+      id: crypto.randomUUID(),
+      type: "cover",
+      style: "bottom-left overlay-gradient",
+      name: "5. 방문 CTA",
+      brand: "NOBLE COCO APGUJEONG",
+      subtitle: "바람막이만 있는 줄 알았다면,",
+      title: "티셔츠 컬러까지\n같이 보고 가세요",
+      englishTitle: "",
+      scriptText: "",
+      url: "@NOBLECOCO",
+      overlay: 0.28,
+      grain: false,
+      bgImage: theme2Photos[4],
+      bgPosition: "center 50%",
+      insetImage: samplePhotos[2],
+      hiddenLayers: { ...hiddenForTheme2, subtitle: true, title: true, url: true },
+      layers: createLayers({
+        subtitle: { x: 6, y: 72, size: 30 },
+        title: { x: 6, y: 80, size: 76 },
         url: { y: 95.4, size: 20 }
       })
     }
@@ -431,8 +461,8 @@ function useEditableTextSync(value) {
     const node = ref.current;
     if (!node || document.activeElement === node) return;
     const nextValue = value ?? "";
-    if (node.textContent !== nextValue) {
-      node.textContent = nextValue;
+    if (node.innerHTML !== nextValue) {
+      node.innerHTML = nextValue;
     }
   }, [value]);
 
@@ -441,6 +471,36 @@ function useEditableTextSync(value) {
 
 // 작업 내역 자동 저장 — 시드 데이터 스키마/카피가 바뀌면 버전을 올려 이전 저장본을 무시한다.
 const STORAGE_KEY = "noble-coco-carousel:v2";
+const THEME_TEMPLATE_VERSIONS = { theme2: 7 };
+
+function migratePersistedState(data) {
+  const activeThemeId = data.activeThemeId ?? CAROUSEL_THEMES[0].id;
+  const themeVersion = THEME_TEMPLATE_VERSIONS[activeThemeId];
+  if (!themeVersion || data.templateVersions?.[activeThemeId] === themeVersion) {
+    return data;
+  }
+
+  const theme = CAROUSEL_THEMES.find((entry) => entry.id === activeThemeId);
+  if (!theme) return data;
+
+  const latestSlides = theme.make();
+  const slides = activeThemeId === "theme2"
+    ? latestSlides
+    : data.slides.length < latestSlides.length
+      ? [...data.slides, ...latestSlides.slice(data.slides.length)]
+      : data.slides;
+
+  return {
+    ...data,
+    slides,
+    activeId: data.activeId && slides.some((slide) => slide.id === data.activeId) ? data.activeId : slides[0].id,
+    activeLayer: activeThemeId === "theme2" ? "title" : data.activeLayer,
+    templateVersions: {
+      ...(data.templateVersions || {}),
+      [activeThemeId]: themeVersion
+    }
+  };
+}
 
 function loadPersistedState() {
   if (typeof window === "undefined") return null;
@@ -449,7 +509,7 @@ function loadPersistedState() {
     if (!raw) return null;
     const data = JSON.parse(raw);
     if (!data || !Array.isArray(data.slides) || data.slides.length === 0) return null;
-    return data;
+    return migratePersistedState(data);
   } catch {
     return null;
   }
@@ -457,6 +517,7 @@ function loadPersistedState() {
 
 function persistState(state) {
   if (typeof window === "undefined") return;
+  const themeVersion = THEME_TEMPLATE_VERSIONS[state.activeThemeId];
   try {
     window.localStorage.setItem(
       STORAGE_KEY,
@@ -465,6 +526,8 @@ function persistState(state) {
         activeId: state.activeId,
         activeLayer: state.activeLayer,
         activeThemeId: state.activeThemeId,
+        initialSlideMap: state.initialSlideMap,
+        templateVersions: themeVersion ? { [state.activeThemeId]: themeVersion } : {},
         savedAt: new Date().toISOString()
       })
     );
@@ -507,8 +570,17 @@ function App() {
   const [activeThemeId, setActiveThemeId] = useState(initialActiveThemeId);
 
   useEffect(() => {
-    persistState({ slides, activeId, activeLayer, activeThemeId });
+    persistState({
+      slides,
+      activeId,
+      activeLayer,
+      activeThemeId,
+      initialSlideMap: initialSlidesRef.current
+    });
   }, [slides, activeId, activeLayer, activeThemeId]);
+
+  const buildInitialMap = (slidesArr) =>
+    Object.fromEntries(slidesArr.map((slide) => [slide.id, structuredClone(slide)]));
 
   const resetToSeed = () => {
     if (typeof window !== "undefined" && !window.confirm("저장된 작업 내역을 지우고 현재 테마의 시드로 되돌릴까요?")) {
@@ -517,6 +589,7 @@ function App() {
     clearPersistedState();
     const theme = CAROUSEL_THEMES.find((entry) => entry.id === activeThemeId) || CAROUSEL_THEMES[0];
     const nextSlides = theme.make();
+    initialSlidesRef.current = buildInitialMap(nextSlides);
     setSlides(nextSlides);
     setActiveId(nextSlides[0].id);
     setActiveLayer(nextSlides[0].type === "cover" ? "title" : "tipLabel");
@@ -527,6 +600,7 @@ function App() {
     const theme = CAROUSEL_THEMES.find((entry) => entry.id === themeId);
     if (!theme) return;
     const nextSlides = theme.make();
+    initialSlidesRef.current = buildInitialMap(nextSlides);
     setSlides(nextSlides);
     setActiveId(nextSlides[0].id);
     setActiveLayer(nextSlides[0].type === "cover" ? "title" : "tipLabel");
@@ -536,7 +610,11 @@ function App() {
   const initialSlidesRef = useRef(null);
 
   if (!initialSlidesRef.current) {
-    initialSlidesRef.current = makeInitialSlideMap();
+    const persistedMap = persisted?.initialSlideMap;
+    initialSlidesRef.current =
+      persistedMap && initialSlides.every((slide) => persistedMap[slide.id])
+        ? persistedMap
+        : Object.fromEntries(initialSlides.map((slide) => [slide.id, structuredClone(slide)]));
   }
 
   const activeSlide = useMemo(
@@ -1066,6 +1144,30 @@ function App() {
     setActiveId(clone.id);
   };
 
+  const addSlide = () => {
+    if (slides.length >= MAX_SLIDES) return;
+    const template = structuredClone(activeSlide);
+    const blank = {
+      ...template,
+      id: crypto.randomUUID(),
+      name: `새 카드 ${slides.length + 1}`
+    };
+    if (template.type === "tip") {
+      blank.tipLabel = "New";
+      blank.bullets = ["내용을 입력하세요.", "두 번째 줄을 입력하세요.", "세 번째 줄을 입력하세요."];
+    } else {
+      blank.title = "제목 입력";
+      blank.subtitle = "부제목 입력";
+      blank.englishTitle = "";
+      blank.scriptText = "";
+    }
+    initialSlidesRef.current[blank.id] = structuredClone(blank);
+    const index = slides.findIndex((slide) => slide.id === activeSlide.id);
+    const next = [...slides.slice(0, index + 1), blank, ...slides.slice(index + 1)];
+    setSlides(next);
+    setActiveId(blank.id);
+  };
+
   const resetActiveSlide = () => {
     const initialSlide = initialSlidesRef.current[activeSlide.id];
     if (!initialSlide) return;
@@ -1073,13 +1175,16 @@ function App() {
     setActiveLayer(initialSlide.type === "cover" ? "title" : "tipLabel");
   };
 
-  const deleteSlide = () => {
+  const deleteSlide = (slideId = activeSlide.id) => {
     if (slides.length <= 1) return;
-    const index = slides.findIndex((slide) => slide.id === activeSlide.id);
-    const next = slides.filter((slide) => slide.id !== activeSlide.id);
-    delete initialSlidesRef.current[activeSlide.id];
+    const index = slides.findIndex((slide) => slide.id === slideId);
+    if (index === -1) return;
+    const next = slides.filter((slide) => slide.id !== slideId);
+    delete initialSlidesRef.current[slideId];
     setSlides(next);
-    setActiveId(next[Math.max(0, index - 1)].id);
+    if (slideId === activeId) {
+      setActiveId(next[Math.max(0, index - 1)].id);
+    }
   };
 
   const makeCanvas = async (slideId) => {
@@ -1394,7 +1499,7 @@ function App() {
                 onClick={resetToSeed}
                 title="저장된 작업 내역을 지우고 현재 테마의 시드로 되돌립니다"
               >
-                시드로 리셋
+                기본값 복원
               </button>
             </div>
           </div>
@@ -1464,6 +1569,19 @@ function App() {
                 </button>
               </div>
               <div className="slide-preview-frame">
+                <button
+                  type="button"
+                  className="slide-delete-btn"
+                  onClick={(event) => {
+                    event.stopPropagation();
+                    deleteSlide(slide.id);
+                  }}
+                  disabled={slides.length <= 1}
+                  title="이 카드 삭제"
+                  aria-label={`${index + 1}번 카드 삭제`}
+                >
+                  ×
+                </button>
                 <CarouselSlide
                   slide={slide}
                   isActive={slide.id === activeId}
@@ -1477,6 +1595,7 @@ function App() {
                   onLayerLockToggle={toggleLayerLock}
                   onLayerDuplicate={duplicateLayer}
                   onLayerDelete={deleteLayer}
+                  onLayerColor={(slideId, layerKey, color) => updateLayerForSlide(slideId, layerKey, { color })}
                   isLayerLocked={isLayerLocked}
                   onImageUpload={uploadSlideImage}
                   onImageDrop={uploadDroppedSlideImage}
@@ -1487,6 +1606,23 @@ function App() {
               </div>
             </div>
           ))}
+          <div className="slide-shell">
+            <div className="slide-caption">
+              <span className="slide-tab w-full" style={{ visibility: "hidden" }}>+</span>
+            </div>
+            <button
+              type="button"
+              className="slide-preview-frame slide-add-placeholder"
+              onClick={addSlide}
+              disabled={slides.length >= MAX_SLIDES}
+              title={slides.length >= MAX_SLIDES ? `최대 ${MAX_SLIDES}장까지 추가할 수 있어요` : "빈 카드를 1장 추가합니다"}
+            >
+              <span className="slide-add-placeholder-inner">
+                <span className="slide-add-placeholder-plus">+</span>
+                <span className="slide-add-placeholder-text">여기에 카드추가!</span>
+              </span>
+            </button>
+          </div>
         </div>
       </section>
 
@@ -1514,7 +1650,7 @@ function App() {
           </div>
           <div className="mt-3 grid grid-cols-2 gap-2">
             <button className="btn" onClick={duplicateSlide} disabled={slides.length >= MAX_SLIDES}>복제</button>
-            <button className="btn btn-danger" onClick={deleteSlide}>삭제</button>
+            <button className="btn btn-danger" onClick={() => deleteSlide()} disabled={slides.length <= 1}>삭제</button>
           </div>
           <button className="btn mt-2 w-full" onClick={resetActiveSlide}>
             현재 카드 기본값 복원
@@ -1667,8 +1803,8 @@ function App() {
               오버레이 강도 {activeSlide.overlay.toFixed(2)}
               <input
                 type="range"
-                min="0.35"
-                max="0.55"
+                min="0"
+                max="1"
                 step="0.01"
                 value={activeSlide.overlay}
                 onChange={(event) => updateSlide({ overlay: Number(event.target.value) })}
@@ -1787,6 +1923,7 @@ const CarouselSlide = React.memo(function CarouselSlide({
   onLayerLockToggle,
   onLayerDuplicate,
   onLayerDelete,
+  onLayerColor,
   isLayerLocked,
   onImageUpload,
   onImageDrop
@@ -1805,6 +1942,7 @@ const CarouselSlide = React.memo(function CarouselSlide({
     onLayerLockToggle,
     onLayerDuplicate,
     onLayerDelete,
+    onLayerColor,
     isLayerLocked
   };
 
@@ -2248,7 +2386,7 @@ function EditableBulletItem({
       data-layer-label={`Bullet ${index + 1}`}
       key={index}
       onFocus={() => onSelectLayer(slide.id, layerKey)}
-      onInput={(event) => onBulletChange(slide.id, layerKey, index, event.currentTarget.textContent)}
+      onInput={(event) => onBulletChange(slide.id, layerKey, index, event.currentTarget.innerHTML)}
       onKeyDown={finishSingleLineEdit}
       onPaste={pastePlainText}
       ref={textRef}
@@ -2304,7 +2442,7 @@ function EditableTextLayer({
         className="editable-text-content"
         contentEditable
         onFocus={() => onSelectLayer(slide.id, layerKey)}
-        onInput={(event) => onTextChange(slide.id, layerKey, { [field]: event.currentTarget.textContent })}
+        onInput={(event) => onTextChange(slide.id, layerKey, { [field]: event.currentTarget.innerHTML })}
         onKeyDown={finishSingleLineEdit}
         onMouseDown={() => onSelectLayer(slide.id, layerKey)}
         onPaste={pastePlainText}
@@ -2326,6 +2464,46 @@ function LayerToolbar({
   onLayerDuplicate,
   onLayerDelete
 }) {
+  const controls = useContext(LayerControlsContext);
+  const onLayerColor = controls?.onLayerColor;
+  const currentColor = isCopyLayerKey(layerKey)
+    ? slide.layerCopies?.find((copy) => copy.id === copyIdFromLayerKey(layerKey))?.layer?.color
+    : slide.layers?.[layerKey]?.color;
+  const savedRangeRef = useRef(null);
+
+  const captureSelection = (event) => {
+    event.preventDefault();
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0 || sel.isCollapsed) {
+      savedRangeRef.current = null;
+      return;
+    }
+    const range = sel.getRangeAt(0);
+    const node = range.commonAncestorContainer;
+    const editable = (node.nodeType === 1 ? node : node.parentElement)?.closest?.('[contenteditable]');
+    savedRangeRef.current = editable ? { range: range.cloneRange(), editable } : null;
+  };
+
+  const applyColor = (color) => {
+    const saved = savedRangeRef.current;
+    savedRangeRef.current = null;
+    if (saved) {
+      saved.editable.focus();
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(saved.range);
+      try {
+        document.execCommand("styleWithCSS", false, true);
+        document.execCommand("foreColor", false, color);
+      } catch {
+        /* noop */
+      }
+      saved.editable.dispatchEvent(new InputEvent("input", { bubbles: true }));
+      return;
+    }
+    onLayerColor?.(slide.id, layerKey, color);
+  };
+
   return (
     <div className="layer-toolbar" onPointerDown={(event) => event.stopPropagation()}>
       <button type="button" onClick={() => onLayerReset?.(slide.id, layerKey)}>초기화</button>
@@ -2334,6 +2512,22 @@ function LayerToolbar({
       </button>
       <button type="button" onClick={() => onLayerDuplicate?.(slide.id, layerKey)}>복제</button>
       <button type="button" onClick={() => onLayerDelete?.(slide.id, layerKey)}>삭제</button>
+      {currentColor !== undefined && onLayerColor && (
+        <label
+          className="layer-toolbar-color"
+          title="텍스트 일부를 드래그로 선택하면 그 부분만 색칠. 선택이 없으면 전체 색상."
+          onMouseDown={captureSelection}
+          onPointerDown={(event) => event.stopPropagation()}
+        >
+          <span aria-hidden="true" className="layer-toolbar-color-swatch" style={{ background: currentColor }} />
+          <input
+            type="color"
+            value={currentColor}
+            onChange={(event) => applyColor(event.target.value)}
+            aria-label="텍스트 색상"
+          />
+        </label>
+      )}
     </div>
   );
 }
